@@ -90,6 +90,8 @@ a {
 
 .link-contacts {
     font-family: 'Roboto';
+    font-weight: 500;
+    font-style: normal;
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--text-color);
@@ -100,14 +102,13 @@ a {
 .link-contacts:focus {
     color: var(--additional-color);
 }
-.link-contacts:focus, 
-.link-contacts:hover .smartphone{
+.link-contacts:focus .contacts-icon{
     fill: var(--additional-color);
 }
-.link-contacts:focus,
-.link-contacts:hover .envelope {
+.link-contacts:hover .contacts-icon{
     fill: var(--additional-color);
 }
+
 .link-footer {
     font-style: normal;
     font-weight: 400;
@@ -367,7 +368,7 @@ img {
 }
 
 .container-header {
-    display: inline-flex;
+    display: flex;
 
     align-items: center;
 
@@ -395,7 +396,7 @@ img {
     margin-left: auto;
     margin-right: auto;
     outline: ;
-    background-image:
+    background-image:linear-gradient(to right, rgba(47, 48, 58, 0.4),rgba(47, 48, 58, 0.4)),
         url(../images/hero.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -487,9 +488,17 @@ img {
     border: 1px solid var(--secondary-border);
 
 }
-.item:hover{
+.card-link{
+    display: block;
+}
+.card-link:hover{
 box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+.card-link:focus{
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+
+
 .card-title {
     padding: 20px 24px;
 }
@@ -497,20 +506,12 @@ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1p
 .benefits-section{
     padding: 94px 0px;
 }
-.benefits-list{
-    list-style-type: none;
-    display: flex;
-    gap:30px;
+
+.box-icons{
+display: flex;
+    gap: 30px;
 }
-.benefits-unit{
-    width: 270px;
-    display: flex;
-    background-color:var(--button-color);
-    margin-bottom: 30px;
-    border-radius: 4px;
-    height: 120px;
-   
-}
+
 .benefits{
     display: flex;
     width: 270px;
@@ -542,7 +543,8 @@ height: 53.69px;
     list-style-type: none;
     display: flex;
     gap:10px;
-    margin: 16px 32px;
+    margin-top: 16px;
+    justify-content: center;
 }
 .soc-item{
     
@@ -564,21 +566,17 @@ height: 53.69px;
     height: 20px;
     fill: var(--icon-color);
 }
-.soc-link:hover,
+.soc-link:hover{
+    background-color: var(--additional-color);
+}
 .soc-link:focus{
 background-color: var(--additional-color);
 }
-
-.soc-link:hover .soc-icon,
-.soc-link:focus .soc-icon
-{
-fill: var(--attribute-color);
-
+.soc-link:hover .soc-icon{
+    fill: var(--attribute-color);
 }
 .soc-link:focus .soc-icon{
-background-color: var(--additional-color);
 fill: var(--attribute-color);
-
 }
 
 .clients-section{
@@ -597,13 +595,13 @@ fill: var(--attribute-color);
     border-radius: 4px;
     justify-content: center;
     align-items: center;
-
+fill: var(--icon-color);
 }
 .clients-icon{
     display: block;
     width: 106px;
     height: 60px;
-    fill: var(--icon-color);
+   
       
 }
 .clients-title{
@@ -618,16 +616,24 @@ fill: var(--attribute-color);
     
         color: var(--base-color)
     }
-.client-link:hover .clients-icon,
-.client-link:focus .client-icon
-{
+
+.client-link:hover {
+    border: 1px solid var(--additional-color);
+    fill: var(--additional-color);
+}
+.client-link:focus {
+    border: 1px solid var(--additional-color);
+    fill: var(--additional-color);
+}
+
+.client-link:hover .clients-icon {
+    fill: var(--additional-color);
+}
+.client-link:focus .client-icon {
     fill: var(--additional-color);
 }  
-.client-link:hover,
-.client-link:focus
-{
-    border:1px solid var(--additional-color);
-}
+
+
 .footer-title{
  font-weight: 700;
 font-size: 14px;
@@ -662,7 +668,9 @@ width: 44px;
     width: 20px;
     height: 20px;
 }
-.net-links:hover,
+.net-links:hover{
+background-color: var(--additional-color);
+}
 .net-links:focus{
     background-color: var(--additional-color);
 }
